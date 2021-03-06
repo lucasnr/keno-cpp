@@ -37,3 +37,5 @@ Once you have builded the executable of the game, to play it, you can simply run
 ```shell
 ./build/run
 ```
+
+Author: Lucas do Nascimento Ribeiro
