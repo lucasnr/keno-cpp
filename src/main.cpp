@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
   string filename = argv[1];
 
   KenoBet bet;
-  int rounds = readKenoBetFile(filename, &bet);
+  unsigned int rounds = readKenoBetFile(filename, &bet);
   if (rounds == 0) return 1;
 
   cash_type balance = 0.0;
