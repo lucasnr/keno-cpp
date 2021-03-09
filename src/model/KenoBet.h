@@ -15,6 +15,7 @@ class KenoBet {
    @return T if number chosen is successfully inserted ; F otherwise. */
   bool add_number(number_type spot_) {
     if (m_spots.size() >= 15) return false;
+    if (spot_ <= 0 || spot_ > 80) return false;
 
     bool contains =
         std::find(m_spots.begin(), m_spots.end(), spot_) != m_spots.end();

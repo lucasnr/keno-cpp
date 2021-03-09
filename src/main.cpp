@@ -1,31 +1,21 @@
-#include <fstream>
 #include <iostream>
+
 using namespace std;
 
-#include "./lib/message_util.h"
+#include "./util/betReader.h"
+// #include "./util/message_util.h"
 
 int main(int argc, char *argv[]) {
-  char *filename = argv[1];
-  if (filename == nullptr) {
-    message::danger("No betfile was provided");
-    return 1;
-  }
+  // if (argv[1] == nullptr) {
+  //   message::danger("No bet file was provided");
+  //   return 1;
+  // }
+  // string filename = argv[1];
+  string filename = "file.dat";
 
-  ifstream file(filename);
-  if (!file.good()) {
-    message::danger("The provided betfile was not found");
-    file.close();
-    return 1;
-  }
-
-  message::info("Reading betfile");
-  string line;
-  while (getline(file, line)) {
-    // TODO: Read file and store content in a const
-    cout << line << endl;
-  }
-  file.close();
-  message::success("Betfile loaded");
+  KenoBet kenoBet;
+  int rounds = readKenoBetFile(filename, &kenoBet);
+  if (rounds == 0) return 1;
 
   return 0;
 }
