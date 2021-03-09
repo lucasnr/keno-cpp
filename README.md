@@ -35,7 +35,15 @@ Be aware that CMake uses a cache file, so if you are already using the proper Wi
 Once you have builded the executable of the game, to play it, you can simply run:
 
 ```shell
-./build/run
+./build/run filename.extension
 ```
+
+Have in mind that this game needs a file do be able to run. The file lines follow this rules:
+
+1. The initial wage
+2. The number of rounds
+3. The spots
+
+You can use and/or see the example file named `example.dat` that is on the root directory
 
 Author: Lucas do Nascimento Ribeiro
