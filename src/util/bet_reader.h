@@ -63,6 +63,11 @@ unsigned int readKenoBetFile(const string filename, KenoBet* bet) {
     bet->add_number(spot);
   }
 
+  if (bet->get_spots().empty()) {
+    message::danger("Error reading bet file!");
+    return 0;
+  }
+
   message::success("Bet successfully read!");
   return rounds;
 }

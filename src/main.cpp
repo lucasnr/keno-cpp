@@ -80,7 +80,9 @@ int main(int argc, char *argv[]) {
     // ======= DISPLAYS HITS =======
     auto random = generateHits();
     value.str(string());
-    for (size_t i = 0; i < HITS_SIZE; i++) value << random[i] << " ";
+    for (size_t i = 0; i < HITS_SIZE; i++) {
+      value << random[i] << " ";
+    }
 
     cout << "The hits are: [ " << message::inline_info(value.str()) << "]"
          << endl
